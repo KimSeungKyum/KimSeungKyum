@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+ int x, y;
+  int answer, guess, tries=1;
+
+ srand( (unsigned int)  time(0) );
+ answer = rand() % y + 1 ;
+
+ printf("숫자 맞추기 게임입니다.\n");
+ printf("난수 하한값 입력:");
+ scanf("%d", &x);
+ printf("난수 상한값 입력(1보다 작지 않은 수): ");
+ scanf("%d", &y);
+
+ if(x > y)
+   printf("난수 상한값 입력: ");
+
+ do
+ {
+  printf("%d번째 시도, 추측값 입력: ", tries, guess);
+  scanf("%d", &guess);
+  tries++;
+
+  {if(guess > answer)
+
+    printf("추측한 수가 정답보다 큽니다.\n");
+
+   else if( guess < answer)
+
+    printf("추측한 수가 정답보다 작습니다.\n");
+  }
+  
+ } while( guess != answer);
+
+ printf("축하합니다. 정답은 %d입니다.\n", answer);
+
+ return 0;
+} 
